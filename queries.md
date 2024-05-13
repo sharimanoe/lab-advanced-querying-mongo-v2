@@ -59,8 +59,14 @@ Limit: 10
 
 **9. All the companies founded on the second semester of the year (July to December). Limit your search to 1000 companies.**
 
-Query: {founded_month: {$gte: 7}}
-Limit: 1000
+{
+filter: {
+founded_day: {
+$gte: 7
+}
+},
+limit: 1000
+}
 
 <br>
 
@@ -69,6 +75,15 @@ Limit: 1000
 Query: {founded_day: {$lte: 7}}
 Sort: {'acquisition.price_amount': -1}
 Limit: 10
+
+{
+filter: {
+founded_day: {
+$lte: 7
+}
+},
+limit: 10
+}
 
 <br>
 
